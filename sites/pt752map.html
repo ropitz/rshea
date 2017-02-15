@@ -24,8 +24,13 @@
         ],
         view: new ol.View({
           center: ol.proj.fromLonLat([-82, 28]),
-          zoom: 6
+          zoom: 12
         })
+            var lonLat = new OpenLayers.LonLat( -82, 28 )
+          .transform(
+          );
+          
+  
          var markers = new OpenLayers.Layer.Markers( "Markers" );
     map.addLayer(markers);
     
