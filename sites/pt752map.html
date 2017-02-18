@@ -46,6 +46,14 @@
       .ol-popup-closer:after {
         content: "✖";
       }
+      #marker {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #088;
+        border-radius: 10px;
+        background-color: #0FF;
+        opacity: 0.5;
+      }
     </style>
   </head>
   <body>
@@ -105,8 +113,22 @@
           zoom: 2
         })
       });
+    //position marker
+    var pos = ol.proj.fromLonLat([6.024054, 47.237829]);
+            // Besac marker
+      var marker = new ol.Overlay({
+        position: pos,
+        positioning: 'center-center',
+        element: document.getElementById('marker'),
+        stopEvent: false
+      });
+      map.addOverlay(marker);
 
-
+      // Besac label
+      var vienna = new ol.Overlay({
+        position: pos,
+        element: document.getElementById('vienna')
+      });
       /**
        * Add a click handler to the map to render the popup.
        */
